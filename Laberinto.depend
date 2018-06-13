@@ -22,3 +22,26 @@
 	<stdbool.h>
 	"Laberinto.h"
 
+1528911868 source:c:\users\salaz002\documents\personal\laberinto\algoritmo.c
+	"Algoritmo.h"
+
+1528906194 c:\users\salaz002\documents\personal\laberinto\algoritmo.h
+	<stdio.h>
+	<stdint.h>
+	<stdbool.h>
+	"Laberinto.h"
+
+1528797612 c:\users\salaz002\documents\personal\laberinto\laberinto.h
+	<stdio.h>
+	<stdint.h>
+	<stdbool.h>
+
+1528797614 source:c:\users\salaz002\documents\personal\laberinto\laberinto.c
+	"Laberinto.h"
+
+1528797614 source:c:\users\salaz002\documents\personal\laberinto\main.c
+	<stdio.h>
+	<stdint.h>
+	"Laberinto.h"
+	"Algoritmo.h"
+
