@@ -16,78 +16,169 @@ persona_t Solucion (unsigned char lab[LAB_SIZE][LAB_SIZE], persona_t jugador)
     switch(jugador.dir)
     {
         case Norte:
-            printf("\n Norte... \n");
-            /* Seguir Norte */
-            /*if (jugador.pos_act[0]+1 >)
+            printf("\n Norte... ");
+            /* Girar Derecha: Este*/
+            if ( jugador.pos_act[0]+1 < LAB_SIZE && lab[jugador.pos_act[0]+1][jugador.pos_act[1]] != 'M' )
             {
-             
-            }*/
-
-        break;
-
-        case Oeste:
-            printf("\n Oeste... \n");
-            /* Seguir Oeste */
-             if ( ( jugador.pos_act[1]-1 < 0 || lab[jugador.pos_act[0]][jugador.pos_act[1]-1] == 'M' ) && lab[jugador.pos_act[0]-1][jugador.pos_act[1]] != 'M' )
-            {
-                jugador.pos_act[0] -= 1;
-                printf("\n Adelante \n");
+               jugador.pos_act[0] += 1;
+                jugador.dir = Este;
+                printf("Derecha \n");
             }
             else
             {
-                /* Girar al sur */
-                if ( ( lab[jugador.pos_act[0]-1][jugador.pos_act[1]] == 'M' || jugador.pos_act[0]-1 < 0 ) && ( jugador.pos_act[1]-1 < 0 || lab[jugador.pos_act[0]][jugador.pos_act[1]-1] == 'M' ) )
+                /* Seguir Recto: Norte */
+                if ( jugador.pos_act[1]-1 >= 0  && lab[jugador.pos_act[0]][jugador.pos_act[1]-1] != 'M' )
                 {
-                    jugador.pos_act[1] += 1;
-                    jugador.dir = Sur;
-                    printf("\n Izquierda \n");
-                }
-                /* Girar Norte */
-                else
-                {   
                     jugador.pos_act[1] -= 1;
-                    jugador.dir = Norte;
-                    printf("\n Derecha \n");
+                    printf("Adelante \n");
+                }
+                else
+                {
+                    /*Girar Izquierda: Oeste */
+                    if ( jugador.pos_act[0]-1 >= 0 && lab[jugador.pos_act[0]-1][jugador.pos_act[1]] != 'M' )
+                    {
+                        jugador.pos_act[0] -= 1;
+                        jugador.dir = Oeste;
+                        printf("Izquierda \n");
+                    }
+                    else
+                    {
+                        /* Regresarse: Sur*/
+                        jugador.pos_act[1] += 1;
+                        jugador.dir = Sur;
+                        printf("Atras \n");
+                    }
+                }
+            }
+        break;
+
+        case Oeste:
+            printf("\n Oeste... ");
+            /* Girar Derecha: Norte*/
+            if ( jugador.pos_act[1]-1 >= 0 && lab[jugador.pos_act[0]][jugador.pos_act[1]-1] != 'M' )
+            {
+               jugador.pos_act[1] -= 1;
+                jugador.dir = Norte;
+                printf("Derecha \n");
+            }
+            else
+            {
+                /* Seguir Recto: Oeste */
+                if ( jugador.pos_act[0]-1 >= 0 && lab[jugador.pos_act[0]-1][jugador.pos_act[1]] != 'M' )
+                {
+                    jugador.pos_act[0] -= 1;
+                    printf("Adelante \n");
+                }
+                else
+                {
+                    /*Girar Izquierda: Sur */
+                    if ( jugador.pos_act[1]+1 < LAB_SIZE && lab[jugador.pos_act[0]][jugador.pos_act[1]+1] != 'M' )
+                    {
+                        jugador.pos_act[1] += 1;
+                        jugador.dir = Sur;
+                        printf("Izquierda \n");
+                    }
+                    else
+                    {
+                        /* Regresarse: Este*/
+                        jugador.pos_act[0] += 1;
+                        jugador.dir = Sur;
+                        printf("Atras \n");
+                    }
                 }
             }
         break;
 
         case Sur:
-            printf("\n Sur... \n");
-            /* Seguir Sur */
-            if ( (jugador.pos_act[1]+1 < LAB_SIZE ) && (lab[jugador.pos_act[0]][jugador.pos_act[1]+1] != 'M') )
+            printf("\n Sur... ");
+            /* Girar Derecha: Oeste*/
+            if ( jugador.pos_act[0]-1 >= 0 && lab[jugador.pos_act[0]-1][jugador.pos_act[1]] != 'M' )
             {
-               jugador.pos_act[1] += 1;
-                printf("\n Adelante \n");
+               jugador.pos_act[0] -= 1;
+                jugador.dir = Oeste;
+                printf("Derecha \n");
             }
             else
-            {   
-                /* Girar Este */
-                if(( jugador.pos_act[1]+1 < LAB_SIZE ||  lab[jugador.pos_act[0]][jugador.pos_act[1]+1] == 'M') && ( lab[jugador.pos_act[0]+1][jugador.pos_act[1]] != 'M' ) )
+            {
+                /* Seguir Recto: Sur */
+                if ( jugador.pos_act[1]+1 < LAB_SIZE && lab[jugador.pos_act[0]][jugador.pos_act[1]+1] != 'M' )
                 {
-                    jugador.pos_act[0] += 1;
-                    jugador.dir = Este;
-                    printf("\n Derecha \n");
+                    jugador.pos_act[1] += 1;
+                    printf("Adelante \n");
                 }
-                /* Girar Oeste */
                 else
                 {
-                    jugador.pos_act[0] -= 1;
-                    jugador.dir = Oeste;
-                    printf("\n Izquierda \n");
+                    /*Girar Izquierda: Este */
+                    if ( jugador.pos_act[0]+1 < LAB_SIZE && lab[jugador.pos_act[0]+1][jugador.pos_act[1]] != 'M' )
+                    {
+                        jugador.pos_act[0] += 1;
+                        jugador.dir = Este;
+                        printf("Izquierda \n");
+                    }
+                    else
+                    {
+                        /* Regresarse: Sur*/
+                        jugador.pos_act[1] -= 1;
+                        jugador.dir = Norte;
+                        printf("Atras \n");
+                    }
                 }
             }
         break;
 
         case Este:
-            printf("\n Este... \n");
+            printf("\n Este... ");
+            /* Girar Derecha: Sur*/
+            if ( jugador.pos_act[1]+1 < LAB_SIZE && lab[jugador.pos_act[0]][jugador.pos_act[1]+1] != 'M' )
+            {
+               jugador.pos_act[1] += 1;
+                jugador.dir = Sur;
+                printf("Derecha \n");
+            }
+            else
+            {
+                /* Seguir Recto: Este */
+                if ( jugador.pos_act[0]+1 < LAB_SIZE && lab[jugador.pos_act[0]+1][jugador.pos_act[1]] != 'M' )
+                {
+                    jugador.pos_act[0] += 1;
+                    printf("Adelante \n");
+                }
+                else
+                {
+                    /*Girar Izquierda: Norte */
+                    if ( jugador.pos_act[1]-1 >= 0 && lab[jugador.pos_act[0]][jugador.pos_act[1]-1] != 'M' )
+                    {
+                        jugador.pos_act[1] -= 1;
+                        jugador.dir = Norte;
+                        printf("Izquierda \n");
+                    }
+                    else
+                    {
+                        /* Regresarse: Oeste*/
+                        jugador.pos_act[0] -= 1;
+                        jugador.dir = Oeste;
+                        printf("Atras \n");
+                    }
+                }
+            }
         break;
 
         default:
-            printf("\n Error... \n");
-        break; 
+            printf("\n Error... ");
+        break;
     }
     jugador.mov++;
+    jugador.done =check_Done(lab,jugador);
     return jugador;
 }
+
+bool check_Done ( unsigned char lab[LAB_SIZE][LAB_SIZE], persona_t jugador )
+{
+    if ( lab[jugador.pos_act[0]][jugador.pos_act[0]] == 'S')
+    {
+        return true;
+    }
+    return false;
+}
+
 

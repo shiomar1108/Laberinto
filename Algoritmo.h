@@ -28,4 +28,6 @@ persona_t init_jugador( persona_t jugador, uint8_t pos[2]);
 
 persona_t Solucion( unsigned char lab[LAB_SIZE][LAB_SIZE], persona_t jugador);
 
+bool check_Done ( unsigned char lab[LAB_SIZE][LAB_SIZE], persona_t jugador );
+
 #endif // ALGORITMO_H_INCLUDED

@@ -45,36 +45,14 @@ uint8_t ent[2] = {19,0};
 
 
 int main(void) {
-
+    int i = 0;
     init_lab(lab,ent, sal);
-
-	jug = init_jugador(jug,ent);
-
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	jug = Solucion(lab,jug);
-	print_board(lab,jug);
-	jug = Solucion(lab,jug);
-	print_board(lab,jug);
-	jug = Solucion(lab,jug);
-	print_board(lab,jug);
-	jug = Solucion(lab,jug);
-	print_board(lab,jug);
-	jug = Solucion(lab,jug);
-	print_board(lab,jug);
-	jug = Solucion(lab,jug);
-	print_board(lab,jug);
-	jug = Solucion(lab,jug);
-	print_board(lab,jug);
-
+    jug = init_jugador(jug,ent);
+    while( !jug.done )
+    {
+        jug = Solucion(lab,jug);
+        //print_board(lab,jug);
+    }
 }
 
 

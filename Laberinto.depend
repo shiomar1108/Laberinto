@@ -22,10 +22,10 @@
 	<stdbool.h>
 	"Laberinto.h"
 
-1528911868 source:c:\users\salaz002\documents\personal\laberinto\algoritmo.c
+1528922695 source:c:\users\salaz002\documents\personal\laberinto\algoritmo.c
 	"Algoritmo.h"
 
-1528906194 c:\users\salaz002\documents\personal\laberinto\algoritmo.h
+1528922748 c:\users\salaz002\documents\personal\laberinto\algoritmo.h
 	<stdio.h>
 	<stdint.h>
 	<stdbool.h>
@@ -39,7 +39,7 @@
 1528797614 source:c:\users\salaz002\documents\personal\laberinto\laberinto.c
 	"Laberinto.h"
 
-1528797614 source:c:\users\salaz002\documents\personal\laberinto\main.c
+1528922551 source:c:\users\salaz002\documents\personal\laberinto\main.c
 	<stdio.h>
 	<stdint.h>
 	"Laberinto.h"
