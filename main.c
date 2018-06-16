@@ -40,14 +40,19 @@ void print_board ( unsigned char lab[LAB_SIZE][LAB_SIZE], persona_t jugador )
 unsigned char lab[LAB_SIZE][LAB_SIZE];
 persona_t jug;
 
-uint8_t sal[2] = {19,19};
-uint8_t ent[2] = {19,0};
-
-
 int main(void) {
-    int i = 0;
+
+    uint8_t sal[2] = {0,0};
+    uint8_t ent[2] = {0,0};
+
+    printf("\n Diga la entrada al laberinto ? (x,y):");
+    //scanf("");
+    printf("\n Diga la salida al laberinto ? (x,y):");
+    //scanf("");
+
     init_lab(lab,ent, sal);
     jug = init_jugador(jug,ent);
+
     while( !jug.done )
     {
         jug = Solucion(lab,jug);
