@@ -3,7 +3,7 @@
 
 /*  Local function prototyping  */
 
-void fill_lab ( unsigned char lab[LAB_SIZE][LAB_SIZE] );
+void fill_wall ( unsigned char lab[LAB_SIZE][LAB_SIZE] );
 bool found_row ( int x, uint64_t number[], int size );
 
 /*  Function Declaration    */
@@ -20,18 +20,8 @@ bool found_row ( int x, uint64_t number[], int size )
     return false;
 }
 
-void fill_lab( unsigned char lab[LAB_SIZE][LAB_SIZE] )
+void fill_wall( unsigned char lab[LAB_SIZE][LAB_SIZE] )
 {
-    uint8_t i;
-	uint8_t j;
-	for (i = 0; i < LAB_SIZE; i++)
-	{
-		for (j = 0; j < LAB_SIZE; j++)
-		{
-			lab[j][i] = '.';
-		}
-	}
-	/* TODO: Usar User Inputs */
     uint64_t elements_row0[20] = {0,1,2,3,4,5,6,7,8,9,10,11};
     uint64_t elements_row1[20] = {0,1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19};
     uint64_t elements_row2[20] = {0,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19};
@@ -146,6 +136,19 @@ void init_lab ( unsigned char lab[LAB_SIZE][LAB_SIZE], uint8_t entrada[2], uint8
 
     /* Definicion de la Salida */
     lab[salida[0]][salida[1]] = 83;
+}
+
+void fill_lab ( unsigned char lab[LAB_SIZE][LAB_SIZE] )
+{
+    uint8_t i;
+	uint8_t j;
+	for (i = 0; i < LAB_SIZE; i++)
+	{
+		for (j = 0; j < LAB_SIZE; j++)
+		{
+			lab[j][i] = '.';
+		}
+	}
 }
 
 

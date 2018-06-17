@@ -79,6 +79,7 @@ int main(void) {
     else
     {
         printf("\n Laberinto de Usuario... \n");
+        fill_lab(lab);
         lab[sal[0]][sal[1]] = 'S';
         lab[ent[0]][ent[1]] = 'E';
         while (more != 'n')
@@ -111,8 +112,13 @@ int main(void) {
     {
         /* Rutina de Solucion del Laberinto*/
         jug = Solucion(lab,jug);
-        /* Impresion del laberinto para debug */
-        //print_board(lab,jug);
+
+        /*Laberinto sin salida */
+        if(jug.mov == 200)
+        {
+            printf("\n Laberinto sin salida... \n");
+            break;
+        }
     }
     /*Impresion final para ver al jugador en la salida */
     print_board(lab,jug);

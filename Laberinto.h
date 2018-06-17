@@ -13,4 +13,7 @@
 
 void init_lab ( unsigned char lab[LAB_SIZE][LAB_SIZE], uint8_t entrada[2], uint8_t salida [2] );
 
+void fill_lab ( unsigned char lab[LAB_SIZE][LAB_SIZE] );
+
+
 #endif // LABERINTO_H_INCLUDED
