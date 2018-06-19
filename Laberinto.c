@@ -131,6 +131,7 @@ void fill_wall( unsigned char lab[LAB_SIZE][LAB_SIZE] )
 void init_lab ( unsigned char lab[LAB_SIZE][LAB_SIZE], uint8_t entrada[2], uint8_t salida [2] )
 {
     fill_lab(lab);
+    fill_wall(lab);
     /* Definicion de la Entrada */
     lab[entrada[0]][entrada[1]] = 69;
 

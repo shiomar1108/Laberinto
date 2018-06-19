@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1529275952 source:/home/shiomar/Desktop/Proyectos/Laberinto/Laberinto.c
+1529450256 source:/home/shiomar/Desktop/Proyectos/Laberinto/Laberinto.c
 	"Laberinto.h"
 
 1529275946 /home/shiomar/Desktop/Proyectos/Laberinto/Laberinto.h
@@ -7,7 +7,7 @@
 	<stdint.h>
 	<stdbool.h>
 
-1529275991 source:/home/shiomar/Desktop/Proyectos/Laberinto/main.c
+1529276405 source:/home/shiomar/Desktop/Proyectos/Laberinto/main.c
 	<stdio.h>
 	<stdint.h>
 	"Laberinto.h"
